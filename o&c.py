@@ -92,6 +92,16 @@ def check_win(matrix: list) -> bool:
                 print("".join(["Игрок ", player, " выиграл!", ]))
                 print_field(matrix)
                 return False
+    if draw(matrix):
+	    print("Игра завершилась ничьей! Победила дружба!")
+	    return False
+    return True
+
+def draw(matrix: list) -> bool:
+    for row in matrix:
+        for el in row:
+            if el not in PLAYERS:
+                return False
     return True
 
 
